@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- build:metaComponent -->
+  <!-- endbuild -->
+  <title>阿拉私家 - 私家优选</title>
+  <!-- build:cssComponent -->
+  <!-- endbuild -->
+  <!-- build:youMengComponent -->
+  <!-- endbuild -->
+  <link
+    rel="stylesheet"
+    href="../../css/preference/preference-list.css"
+  >
+</head>
+
+<body>
+
+  <div
+    id="app"
+    class="flex"
+    v-cloak
+  >
+    <v-header title="私家优选"></v-header>
+
+    <div class="content">
+      <v-scroll
+        :page="pageNum"
+        :list="dataList"
+        :finished="isFinished"
+        :on-load="getDataList"
+        finish-text="···我是一条底线···"
+      >
+        <ul>
+          <li
+            v-for="item in dataList"
+            :key="item.id"
+            @click="toPreferenceDetail(item.id)"
+          >
+            <v-img 
+              :src="item.cover"
+              loading-type="product"
+            ></v-img>
+          </li>
+        </ul>
+      
+      </v-scroll>
+    </div>
+  </div>
+
+  <!-- build:scriptComponent -->
+  <!-- endbuild -->
+  <script src="../../components/header-component.min.js"></script>
+  <script src="../../js/preference/preference-list.min.js"></script>
+</body>
+
+</html>
