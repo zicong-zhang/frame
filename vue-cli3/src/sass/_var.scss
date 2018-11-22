@@ -1,0 +1,14 @@
+$aa: #ccc !default;
+
+@mixin scroll($direction) {
+  @if $direction==x {
+    overflow-x: scroll;
+  }
+  @else {
+    overflow-y: scroll;
+  }
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
