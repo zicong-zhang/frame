@@ -4,6 +4,9 @@ const dayjs = require("dayjs");
 // const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const utils = require("./build/utils");
+const buildConfig = require('./build/config');
+
 const isProduction = process.env.NODE_ENV === 'production';
 const isDev = process.env.NODE_ENV === "development";
 
@@ -14,23 +17,7 @@ const isDev = process.env.NODE_ENV === "development";
  */
 
 
-function addCSSHotLoader(rule) {
-  if (rule.use("extract-css-loader").has("loader")) {
-    rule
-      .use("hot")
-      .before("extract-css-loader")
-      .loader("css-hot-loader");
-  }
-}
 
-function fixExtractCssHotReload(config) {
-  ["css", "postcss", "scss", "sass", "less", "stylus"].forEach(lang => {
-    let chainRules = config.module.rule(lang);
-    chainRules.oneOfs.values().forEach(rule => {
-      addCSSHotLoader(chainRules.oneOf(rule.name));
-    });
-  });
-}
 
 
 module.exports = {
@@ -60,10 +47,8 @@ module.exports = {
   css: {
     // 将组件内的 CSS 提取到一个单独的 CSS 文件 (只用在生产环境中)
     // 也可以是一个传递给 `extract-text-webpack-plugin` 的选项对象
-    extract: {
-      filename: isDev ? "css/[name].css" : `css/[name].${dayjs().format("YYYYMMDDHHmm")}.css`,
-      chunkFilename: isDev ? "css/[name].css" : `css/[name].${dayjs().format("YYYYMMDDHHmm")}.css`
-    },
+    // 为 true 或 对象 时，不触发热重载
+    extract: isProduction,
     // 当为true时，css文件名可省略 module 默认为 false
     // modules: true,
     // 是否将组件中的 CSS 提取至一个独立的 CSS 文件中,当作为一个库构建时，你也可以将其设置为 false 免得用户自己导入 CSS
@@ -77,15 +62,10 @@ module.exports = {
     //向 CSS 相关的 loader 传递选项(支持 css-loader postcss-loader sass-loader less-loader stylus-loader)
     // sass-loader 时，使用 `{ sass: { ... } }`。
     loaderOptions: {
-      css: {},
-      less: {},
-      sass: {},
       postcss: {
         plugins: [
           rem({ remUnit: 75 }),
-          autoprefixer({
-            browsers: ["> 0.001%"]
-          })
+          autoprefixer({ browsers: ["> 0.001%"] })
         ]
       }
     }
@@ -120,19 +100,19 @@ module.exports = {
       .set('SERVICE', resolve('src/services'));
  */
     // config.plugins = [
-      /* new CopyWebpackPlugin([
-        { from: 'node_modules/jquery/dist', to: 'scripts/jquery' },
-      ]),
-      new HtmlWebpackIncludeAssetsPlugin({
-        assets: [
-          'scripts/jquery/jquery.js',
-          'scripts/sdk/anychat/sdk/anychat4html5.min.js',
-          'scripts/sdk/anychat/sdk/anychatobject.js',
-          'scripts/sdk/anychat/sdk/anychatsdk.js',
-          'scripts/sdk/weixin/sdk.js',
-        ],
-        append: false,
-      }), */
+    /* new CopyWebpackPlugin([
+      { from: 'node_modules/jquery/dist', to: 'scripts/jquery' },
+    ]),
+    new HtmlWebpackIncludeAssetsPlugin({
+      assets: [
+        'scripts/jquery/jquery.js',
+        'scripts/sdk/anychat/sdk/anychat4html5.min.js',
+        'scripts/sdk/anychat/sdk/anychatobject.js',
+        'scripts/sdk/anychat/sdk/anychatsdk.js',
+        'scripts/sdk/weixin/sdk.js',
+      ],
+      append: false,
+    }), */
     // ]
 
     //打包文件带hash
@@ -146,24 +126,12 @@ module.exports = {
   },
 
   chainWebpack: config => {
-
     // css 热重载
-    fixExtractCssHotReload(config);
+    // utils.fixExtractCssHotReload(config);
+    // 提取公用 var.scss
+    utils.useSassResourcesLoader(config);
 
-    // store 应该是一个数组，包含所有的 sass-loader
-    const oneOfsMap = config.module.rule('scss').oneOfs.store;
-    oneOfsMap.forEach(item => {
-      item
-        .use('sass-resources-loader')
-        .loader('sass-resources-loader')
-        .options({
-          // Provide path to the file with resources
-          resources: './src/sass/_var.scss',
-          // Or array of paths
-          // resources: ['./path/to/vars.scss', './path/to/mixins.scss']
-        })
-        .end()
-    })
+    
   },
 
   /* configureWebpack: config => {
