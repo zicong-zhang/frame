@@ -1,0 +1,7 @@
+{
+  "watch": [
+    "build",
+    "package.json"
+  ],
+  "exec": "npm run build --production"
+}
