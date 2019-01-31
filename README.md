@@ -1,4 +1,11 @@
-# frame
-各框架
+## 自用的各类框架和插件
 
-未添加 vue-cli2.x 架构
+
+- [x] Gulp3 + Vue2
+- [x] Vue2 + Webpack3
+- [ ] Vue2 + Webpack4
+- [x] Vue-cli3.x
+
+#
+
+- [x] 压缩图片
