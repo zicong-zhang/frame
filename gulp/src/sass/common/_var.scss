@@ -1,5 +1,5 @@
 @function e($px) {
-	@return ($px / 2);
+  @return ($px / 2);
 }
 
 @mixin over($num) {
@@ -34,3 +34,15 @@
 
 $font: #404040 !default;
 $shadow1: 0 0 e(10px) 0 rgba(0, 0, 0, 0.1) !default;
+
+
+/* 响应式  媒体插询断点 */
+// media="screen and (min-width:500px)" // and | not | .(or的效果)
+// @media #{$xs_md} {}
+$xs: "screen and (max-width: 768px)";
+$xs-up: "screen and (min-width: 769px)";
+$md: "screen and (min-width: 768px) and (max-width: 1024px)";
+$xs-md: "screen and (max-width: 1024px)";
+$big:  "screen and (min-width: 1024px)";
+$k1up: "screen and (min-width: 1921px)";
+$k1down: "screen and (max-width: 1920px)";

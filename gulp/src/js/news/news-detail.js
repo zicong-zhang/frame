@@ -1,6 +1,6 @@
 const vm = new Vue({
-	el:"#app",
-	data: {
+  el: '#app',
+  data: {
 
   },
   created() {

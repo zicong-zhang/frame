@@ -1,28 +1,25 @@
 @import './_var.scss';
-/* 友盟 */
 
-#cnzz_stat_icon_1274300937 {
-  display: none;
+// 竖直1px
+.vertical-bar {
+	display: block;
+	width: 1px;
+	height: 25px;
+	background: #a1a1a1;
+	-webkit-transform: scale(.5, 1);
+	transform: scale(.5, 1);
+	-webkit-transform-origin: center bottom;
+	transform-origin: center bottom;
 }
 
-[href="http://www.cnzz.com/stat/website.php?web_id=1274300937"] {
-  display: none;
-}
-
-#app {
-  height: 100%;
-
-  &.flex {
-    overflow: hidden;
-    display: flex;
-    flex-flow: column;
-    user-select: none;
-    .content {
-      flex: 1;
-      height: calc(100% - 44px);
-      @include scroll(y);
-    }
-  }
+// 水平1px
+.horizon-bar {
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #eaeaea;
+	transform: scale(1, .5);
+	transform-origin: center bottom;
 }
 
 /* 底部 */
