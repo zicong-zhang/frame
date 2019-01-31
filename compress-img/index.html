@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="ie=edge"
+  >
+  <title>Document</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      width: 80%;
+    }
+    #file {
+      display: block;
+      width: 40%;
+      height: 50px;
+      background: #000;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 注意！ -->
+    <!-- accept 不能限制 image/* -->
+    <!-- 有些手机的图片的 file.type 为空 或者各种奇怪的值 -->
+    <!-- 如果限制了，会导致用户的手机无法选择这些有问题的图片 -->
+    <input
+      type="file"
+      name="fileInput"
+      id="file"
+      accept="*"
+      @change="select"
+    >
+    <h2>原图 {{ beforeSize }}</h2>
+    <img :src="before" />
+    <h2>压缩图 {{ afterSize }}</h2>
+    <img :src="after" />
+
+  </div>
+
+  <script src="lib/vue.js"></script>
+  <script src="lib/exif.js"></script>
+  <script src="./compress.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        before: '',
+        after: '',
+        beforeSize: 0,
+        afterSize: 0
+      },
+      methods: {
+        select(e) {
+          const file = e.target.files[0];
+          const fileSize = file.size / 1024;
+
+          if (fileSize > 500) {
+            CompressImg(file, {
+              before: base64 => {
+                this.before = base64;
+                this.beforeSize = `${fileSize} k`;
+              },
+              finish: ({ file, base64 }) => {
+                this.after = base64;
+                this.afterSize = `${file.size / 1024} k`;
+              }
+            })
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
