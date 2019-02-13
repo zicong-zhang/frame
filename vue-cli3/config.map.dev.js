@@ -1,3 +1,31 @@
+const newLocal = {
+  loader: 'postcss-loader',
+  options: {
+    sourceMap: false,
+    plugins: [
+      function (css, result) {
+        var oldCssText = css.toString();
+        var px2remIns = new Px2rem(options);
+        var newCssText = px2remIns.generateRem(oldCssText);
+        var newCssObj = postcss.parse(newCssText);
+        result.root = newCssObj;
+      },
+      function plugin(css, result) {
+        var prefixes = loadPrefixes({
+          from: css.source && css.source.input.file,
+          env: options.env
+        });
+        timeCapsule(result, prefixes);
+        if (options.remove !== false) {
+          prefixes.processor.remove(css, result);
+        }
+        if (options.add !== false) {
+          prefixes.processor.add(css, result);
+        }
+      }
+    ]
+  }
+};
 const a = {
   mode: 'development',
   context: 'G:\\my-projects\\frame\\vue-cli3',
@@ -177,36 +205,7 @@ const a = {
                 }
               },
               /* config.module.rule('css').oneOf('vue-modules').use('postcss-loader') */
-              {
-                loader: 'postcss-loader',
-                options: {
-                  sourceMap: false,
-                  plugins: [
-                    function(css, result) {
-                      var oldCssText = css.toString();
-                      var px2remIns = new Px2rem(options);
-                      var newCssText = px2remIns.generateRem(oldCssText);
-                      var newCssObj = postcss.parse(newCssText);
-                      result.root = newCssObj;
-                    },
-                    function plugin(css, result) {
-                      var prefixes = loadPrefixes({
-                        from: css.source && css.source.input.file,
-                        env: options.env
-                      });
-                      timeCapsule(result, prefixes);
-
-                      if (options.remove !== false) {
-                        prefixes.processor.remove(css, result);
-                      }
-
-                      if (options.add !== false) {
-                        prefixes.processor.add(css, result);
-                      }
-                    }
-                  ]
-                }
-              }
+              newLocal
             ]
           },
           /* config.module.rule('css').oneOf('vue') */

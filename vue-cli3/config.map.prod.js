@@ -181,28 +181,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               }
@@ -233,28 +233,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               }
@@ -287,28 +287,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               }
@@ -338,28 +338,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               }
@@ -398,28 +398,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               }
@@ -450,28 +450,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               }
@@ -504,28 +504,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               }
@@ -555,28 +555,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               }
@@ -615,28 +615,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -681,28 +681,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -749,28 +749,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -814,28 +814,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -888,28 +888,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -948,28 +948,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -1010,28 +1010,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -1069,28 +1069,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -1137,28 +1137,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -1196,28 +1196,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -1257,28 +1257,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -1315,28 +1315,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -1382,28 +1382,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -1442,28 +1442,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -1504,28 +1504,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -1563,28 +1563,28 @@ const a = {
                 options: {
                   sourceMap: false,
                   plugins: [
-                    function (css, result) {
-                        var oldCssText = css.toString();
-                        var px2remIns = new Px2rem(options);
-                        var newCssText = px2remIns.generateRem(oldCssText);
-                        var newCssObj = postcss.parse(newCssText);
-                        result.root = newCssObj;
-                      },
+                    function(css, result) {
+                      var oldCssText = css.toString();
+                      var px2remIns = new Px2rem(options);
+                      var newCssText = px2remIns.generateRem(oldCssText);
+                      var newCssObj = postcss.parse(newCssText);
+                      result.root = newCssObj;
+                    },
                     function plugin(css, result) {
-                        var prefixes = loadPrefixes({
-                          from: css.source && css.source.input.file,
-                          env: options.env
-                        });
-                        timeCapsule(result, prefixes);
+                      var prefixes = loadPrefixes({
+                        from: css.source && css.source.input.file,
+                        env: options.env
+                      });
+                      timeCapsule(result, prefixes);
 
-                        if (options.remove !== false) {
-                          prefixes.processor.remove(css, result);
-                        }
-
-                        if (options.add !== false) {
-                          prefixes.processor.add(css, result);
-                        }
+                      if (options.remove !== false) {
+                        prefixes.processor.remove(css, result);
                       }
+
+                      if (options.add !== false) {
+                        prefixes.processor.add(css, result);
+                      }
+                    }
                   ]
                 }
               },
@@ -1605,27 +1605,27 @@ const a = {
         test: /\.jsx?$/,
         exclude: [
           filepath => {
-                      // always transpile js in vue files
-                      if (/\.vue\.jsx?$/.test(filepath)) {
-                        return false
-                      }
-                      // exclude dynamic entries from cli-service
-                      if (filepath.startsWith(cliServicePath)) {
-                        return true
-                      }
-                      // check if this is something the user explicitly wants to transpile
-                      if (options.transpileDependencies.some(dep => {
-                        if (typeof dep === 'string') {
-                          return filepath.includes(path.normalize(dep))
-                        } else {
-                          return filepath.match(dep)
-                        }
-                      })) {
-                        return false
-                      }
-                      // Don't transpile node_modules
-                      return /node_modules/.test(filepath)
-                    }
+            // always transpile js in vue files
+            if (/\.vue\.jsx?$/.test(filepath)) {
+              return false
+            }
+            // exclude dynamic entries from cli-service
+            if (filepath.startsWith(cliServicePath)) {
+              return true
+            }
+            // check if this is something the user explicitly wants to transpile
+            if (options.transpileDependencies.some(dep => {
+                if (typeof dep === 'string') {
+                  return filepath.includes(path.normalize(dep))
+                } else {
+                  return filepath.match(dep)
+                }
+              })) {
+              return false
+            }
+            // Don't transpile node_modules
+            return /node_modules/.test(filepath)
+          }
         ],
         use: [
           /* config.module.rule('js').use('cache-loader') */
@@ -1649,55 +1649,53 @@ const a = {
     ]
   },
   optimization: {
-    minimizer: [
-      {
-        options: {
-          test: /\.js(\?.*)?$/i,
-          warningsFilter: () => true,
-          extractComments: false,
-          sourceMap: false,
-          cache: true,
-          cacheKeys: defaultCacheKeys => defaultCacheKeys,
-          parallel: true,
-          include: undefined,
-          exclude: undefined,
-          minify: undefined,
-          terserOptions: {
-            output: {
-              comments: /^\**!|@preserve|@license|@cc_on/i
-            },
-            compress: {
-              arrows: false,
-              collapse_vars: false,
-              comparisons: false,
-              computed_props: false,
-              hoist_funs: false,
-              hoist_props: false,
-              hoist_vars: false,
-              inline: false,
-              loops: false,
-              negate_iife: false,
-              properties: false,
-              reduce_funcs: false,
-              reduce_vars: false,
-              switches: false,
-              toplevel: false,
-              typeofs: false,
-              booleans: true,
-              if_return: true,
-              sequences: true,
-              unused: true,
-              conditionals: true,
-              dead_code: true,
-              evaluate: true
-            },
-            mangle: {
-              safari10: true
-            }
+    minimizer: [{
+      options: {
+        test: /\.js(\?.*)?$/i,
+        warningsFilter: () => true,
+        extractComments: false,
+        sourceMap: false,
+        cache: true,
+        cacheKeys: defaultCacheKeys => defaultCacheKeys,
+        parallel: true,
+        include: undefined,
+        exclude: undefined,
+        minify: undefined,
+        terserOptions: {
+          output: {
+            comments: /^\**!|@preserve|@license|@cc_on/i
+          },
+          compress: {
+            arrows: false,
+            collapse_vars: false,
+            comparisons: false,
+            computed_props: false,
+            hoist_funs: false,
+            hoist_props: false,
+            hoist_vars: false,
+            inline: false,
+            loops: false,
+            negate_iife: false,
+            properties: false,
+            reduce_funcs: false,
+            reduce_vars: false,
+            switches: false,
+            toplevel: false,
+            typeofs: false,
+            booleans: true,
+            if_return: true,
+            sequences: true,
+            unused: true,
+            conditionals: true,
+            dead_code: true,
+            evaluate: true
+          },
+          mangle: {
+            safari10: true
           }
         }
       }
-    ],
+    }],
     splitChunks: {
       cacheGroups: {
         vendors: {
@@ -1720,161 +1718,148 @@ const a = {
     /* config.plugin('vue-loader') */
     new VueLoaderPlugin(),
     /* config.plugin('define') */
-    new DefinePlugin(
-      {
-        'process.env': {
-          NODE_ENV: '"production"',
-          VUE_APP_CLI_UI_URL: '""',
-          BASE_URL: '"/"'
-        }
+    new DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"',
+        VUE_APP_CLI_UI_URL: '""',
+        BASE_URL: '"/"'
       }
-    ),
+    }),
     /* config.plugin('case-sensitive-paths') */
     new CaseSensitivePathsPlugin(),
     /* config.plugin('friendly-errors') */
-    new FriendlyErrorsWebpackPlugin(
-      {
-        additionalTransformers: [
-          error => {
-            if (error.webpackError) {
-              const message = typeof error.webpackError === 'string'
-                ? error.webpackError
-                : error.webpackError.message || ''
-              for (const { re, msg, type } of rules) {
-                const match = message.match(re)
-                if (match) {
-                  return Object.assign({}, error, {
-                    // type is necessary to avoid being printed as defualt error
-                    // by friendly-error-webpack-plugin
-                    type,
-                    shortMessage: msg(error, match)
-                  })
-                }
-              }
-              // no match, unknown webpack error without a message.
-              // friendly-error-webpack-plugin fails to handle this.
-              if (!error.message) {
+    new FriendlyErrorsWebpackPlugin({
+      additionalTransformers: [
+        error => {
+          if (error.webpackError) {
+            const message = typeof error.webpackError === 'string' ?
+              error.webpackError :
+              error.webpackError.message || ''
+            for (const {
+                re,
+                msg,
+                type
+              } of rules) {
+              const match = message.match(re)
+              if (match) {
                 return Object.assign({}, error, {
-                  type: 'unknown-webpack-error',
-                  shortMessage: message
+                  // type is necessary to avoid being printed as defualt error
+                  // by friendly-error-webpack-plugin
+                  type,
+                  shortMessage: msg(error, match)
                 })
               }
             }
-            return error
-          }
-        ],
-        additionalFormatters: [
-          errors => {
-            errors = errors.filter(e => e.shortMessage)
-            if (errors.length) {
-              return errors.map(e => e.shortMessage)
+            // no match, unknown webpack error without a message.
+            // friendly-error-webpack-plugin fails to handle this.
+            if (!error.message) {
+              return Object.assign({}, error, {
+                type: 'unknown-webpack-error',
+                shortMessage: message
+              })
             }
+          }
+          return error
+        }
+      ],
+      additionalFormatters: [
+        errors => {
+          errors = errors.filter(e => e.shortMessage)
+          if (errors.length) {
+            return errors.map(e => e.shortMessage)
+          }
+        }
+      ]
+    }),
+    /* config.plugin('extract-css') */
+    new MiniCssExtractPlugin({
+      publicPath: '../',
+      filename: 'css/[name].[contenthash:8].css',
+      chunkFilename: 'css/[name].[contenthash:8].css',
+    }),
+    /* config.plugin('optimize-css') */
+    new OptimizeCssnanoPlugin({
+      sourceMap: false,
+      cssnanoOptions: {
+        preset: [
+          'default',
+          {
+            mergeLonghand: false,
+            cssDeclarationSorter: false
           }
         ]
       }
-    ),
-    /* config.plugin('extract-css') */
-    new MiniCssExtractPlugin(
-      {
-        filename: 'css/[name].[contenthash:8].css',
-        chunkFilename: 'css/[name].[contenthash:8].css'
-      }
-    ),
-    /* config.plugin('optimize-css') */
-    new OptimizeCssnanoPlugin(
-      {
-        sourceMap: false,
-        cssnanoOptions: {
-          preset: [
-            'default',
-            {
-              mergeLonghand: false,
-              cssDeclarationSorter: false
-            }
-          ]
-        }
-      }
-    ),
+    }),
     /* config.plugin('hash-module-ids') */
-    new HashedModuleIdsPlugin(
-      {
-        hashDigest: 'hex'
-      }
-    ),
+    new HashedModuleIdsPlugin({
+      hashDigest: 'hex'
+    }),
     /* config.plugin('named-chunks') */
     new NamedChunksPlugin(
       chunk => {
-                  if (chunk.name) {
-                    return chunk.name
-                  }
+        if (chunk.name) {
+          return chunk.name
+        }
 
-                  const hash = require('hash-sum')
-                  const joinedHash = hash(
-                    Array.from(chunk.modulesIterable, m => m.id).join('_')
-                  )
-                  return `chunk-` + joinedHash
-                }
+        const hash = require('hash-sum')
+        const joinedHash = hash(
+          Array.from(chunk.modulesIterable, m => m.id).join('_')
+        )
+        return `chunk-` + joinedHash
+      }
     ),
     /* config.plugin('html') */
-    new HtmlWebpackPlugin(
-      {
-        templateParameters: (compilation, assets, pluginOptions) => {
-                // enhance html-webpack-plugin's built in template params
-                let stats
-                return Object.assign({
-                  // make stats lazy as it is expensive
-                  get webpack () {
-                    return stats || (stats = compilation.getStats().toJson())
-                  },
-                  compilation: compilation,
-                  webpackConfig: compilation.options,
-                  htmlWebpackPlugin: {
-                    files: assets,
-                    options: pluginOptions
-                  }
-                }, resolveClientEnv(options, true /* raw */))
-              },
-        minify: {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-          collapseBooleanAttributes: true,
-          removeScriptTypeAttributes: true
-        },
-        template: 'G:\\my-projects\\frame\\vue-cli3\\public\\index.html'
-      }
-    ),
+    new HtmlWebpackPlugin({
+      templateParameters: (compilation, assets, pluginOptions) => {
+        // enhance html-webpack-plugin's built in template params
+        let stats
+        return Object.assign({
+          // make stats lazy as it is expensive
+          get webpack() {
+            return stats || (stats = compilation.getStats().toJson())
+          },
+          compilation: compilation,
+          webpackConfig: compilation.options,
+          htmlWebpackPlugin: {
+            files: assets,
+            options: pluginOptions
+          }
+        }, resolveClientEnv(options, true /* raw */ ))
+      },
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        collapseBooleanAttributes: true,
+        removeScriptTypeAttributes: true
+      },
+      template: 'G:\\my-projects\\frame\\vue-cli3\\public\\index.html'
+    }),
     /* config.plugin('preload') */
-    new PreloadPlugin(
-      {
-        rel: 'preload',
-        include: 'initial',
-        fileBlacklist: [
-          /\.map$/,
-          /hot-update\.js$/
-        ]
-      }
-    ),
+    new PreloadPlugin({
+      rel: 'preload',
+      include: 'initial',
+      fileBlacklist: [
+        /\.map$/,
+        /hot-update\.js$/
+      ]
+    }),
     /* config.plugin('prefetch') */
-    new PreloadPlugin(
-      {
-        rel: 'prefetch',
-        include: 'asyncChunks'
-      }
-    ),
+    new PreloadPlugin({
+      rel: 'prefetch',
+      include: 'asyncChunks'
+    }),
     /* config.plugin('copy') */
     new CopyWebpackPlugin(
-      [
-        {
-          from: 'G:\\my-projects\\frame\\vue-cli3\\public',
-          to: 'G:\\my-projects\\frame\\vue-cli3\\dist',
-          toType: 'dir',
-          ignore: [
-            'index.html',
-            '.DS_Store'
-          ]
-        }
-      ]
+      [{
+        from: 'G:\\my-projects\\frame\\vue-cli3\\public',
+        to: 'G:\\my-projects\\frame\\vue-cli3\\dist',
+        toType: 'dir',
+        ignore: [
+          'index.html',
+          '.DS_Store'
+        ]
+      }]
     )
   ],
   entry: {

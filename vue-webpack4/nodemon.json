@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "build",
+    ".babelrc",
+    "package.json",
+    "src/main.js"
+  ],
+  "exec": "npm start"
+}

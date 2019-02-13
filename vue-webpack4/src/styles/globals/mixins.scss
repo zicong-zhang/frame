@@ -1,0 +1,28 @@
+@mixin over($num) {
+	@if $num==1 {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	@else {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $num;
+		overflow: hidden;
+	}
+}
+
+// 滚动
+// x | y
+@mixin scroll($direction) {
+  @if $direction==x {
+    overflow-x: scroll;
+  }
+  @else {
+    overflow-y: scroll;
+  }
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
