@@ -19,7 +19,7 @@
     data() {
       return {
         h2: "THIS IS HOME PAGE",
-        p: "Click me to the ListRouter",
+        p: "Click me to the ListRouter!!!",
         opt: {
           name: 'name',
           age: 'age'
@@ -72,8 +72,8 @@ console.log(process.env);
     }
   }
   .bb {
-    // color: $yellow;
-    font-size: 50px;
+    color: $yellow;
+    font-size: 40px;
     font-family: "arial";
   }
   .bg-img, .sub-img {

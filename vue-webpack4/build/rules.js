@@ -1,18 +1,19 @@
 import {
-  resolve
+  resolve,
+  isDev
 } from './utils';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-export default function createRules(plugins) {
+export default function createRules(plugins = {}) {
   const {
-    MiniCssExtractPlugin
+    MiniCssExtractPlugin = {}
   } = plugins;
 
   const cssLoaders = [
-    // isProduction
-    // : 'vue-style-loader',
-    {
+    !isProduction
+    ? 'vue-style-loader'
+    : {
       loader: MiniCssExtractPlugin.loader,
       options: {
         // css 中的背景图打包后默认在 css/img, 因此返回上一层路径

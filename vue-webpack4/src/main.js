@@ -3,6 +3,10 @@ import Vue from 'vue';
 
 import '@styles/app/index.scss';
 
+import * as utils from '@tools';
+
+console.log('utils:_____', utils);
+
 import './directives';
 import './components';
 

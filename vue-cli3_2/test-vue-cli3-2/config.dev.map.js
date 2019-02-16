@@ -1,7 +1,7 @@
 const config = {
-  mode: 'production',
+  mode: 'development',
   context: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2',
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
   node: {
     setImmediate: false,
     process: 'mock',
@@ -13,9 +13,9 @@ const config = {
   },
   output: {
     path: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\dist',
-    filename: 'js/[name].[contenthash:8].js',
+    filename: '[name].js',
     publicPath: '/',
-    chunkFilename: 'js/[name].[contenthash:8].js'
+    globalObject: 'this'
   },
   resolve: {
     alias: {
@@ -57,7 +57,7 @@ const config = {
             loader: 'cache-loader',
             options: {
               cacheDirectory: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\.cache\\vue-loader',
-              cacheIdentifier: '5858eb58'
+              cacheIdentifier: '474cb030'
             }
           },
           /* config.module.rule('vue').use('vue-loader') */
@@ -68,7 +68,7 @@ const config = {
                 preserveWhitespace: false
               },
               cacheDirectory: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\.cache\\vue-loader',
-              cacheIdentifier: '5858eb58'
+              cacheIdentifier: '474cb030'
             }
           }
         ]
@@ -161,11 +161,12 @@ const config = {
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('css').oneOf('vue-modules').use('extract-css-loader') */
+              /* config.module.rule('css').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('css').oneOf('vue-modules').use('css-loader') */
@@ -191,11 +192,12 @@ const config = {
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('css').oneOf('vue').use('extract-css-loader') */
+              /* config.module.rule('css').oneOf('vue').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('css').oneOf('vue').use('css-loader') */
@@ -219,11 +221,12 @@ const config = {
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('css').oneOf('normal-modules').use('extract-css-loader') */
+              /* config.module.rule('css').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('css').oneOf('normal-modules').use('css-loader') */
@@ -248,11 +251,12 @@ const config = {
           /* config.module.rule('css').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('css').oneOf('normal').use('extract-css-loader') */
+              /* config.module.rule('css').oneOf('normal').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('css').oneOf('normal').use('css-loader') */
@@ -282,11 +286,12 @@ const config = {
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('postcss').oneOf('vue-modules').use('extract-css-loader') */
+              /* config.module.rule('postcss').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('postcss').oneOf('vue-modules').use('css-loader') */
@@ -312,11 +317,12 @@ const config = {
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('postcss').oneOf('vue').use('extract-css-loader') */
+              /* config.module.rule('postcss').oneOf('vue').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('postcss').oneOf('vue').use('css-loader') */
@@ -340,11 +346,12 @@ const config = {
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('postcss').oneOf('normal-modules').use('extract-css-loader') */
+              /* config.module.rule('postcss').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('postcss').oneOf('normal-modules').use('css-loader') */
@@ -369,11 +376,12 @@ const config = {
           /* config.module.rule('postcss').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('postcss').oneOf('normal').use('extract-css-loader') */
+              /* config.module.rule('postcss').oneOf('normal').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('postcss').oneOf('normal').use('css-loader') */
@@ -403,11 +411,12 @@ const config = {
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('scss').oneOf('vue-modules').use('extract-css-loader') */
+              /* config.module.rule('scss').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('scss').oneOf('vue-modules').use('css-loader') */
@@ -440,11 +449,12 @@ const config = {
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('scss').oneOf('vue').use('extract-css-loader') */
+              /* config.module.rule('scss').oneOf('vue').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('scss').oneOf('vue').use('css-loader') */
@@ -475,11 +485,12 @@ const config = {
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('scss').oneOf('normal-modules').use('extract-css-loader') */
+              /* config.module.rule('scss').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('scss').oneOf('normal-modules').use('css-loader') */
@@ -511,11 +522,12 @@ const config = {
           /* config.module.rule('scss').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('scss').oneOf('normal').use('extract-css-loader') */
+              /* config.module.rule('scss').oneOf('normal').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('scss').oneOf('normal').use('css-loader') */
@@ -552,11 +564,12 @@ const config = {
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('sass').oneOf('vue-modules').use('extract-css-loader') */
+              /* config.module.rule('sass').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('sass').oneOf('vue-modules').use('css-loader') */
@@ -590,11 +603,12 @@ const config = {
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('sass').oneOf('vue').use('extract-css-loader') */
+              /* config.module.rule('sass').oneOf('vue').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('sass').oneOf('vue').use('css-loader') */
@@ -626,11 +640,12 @@ const config = {
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('sass').oneOf('normal-modules').use('extract-css-loader') */
+              /* config.module.rule('sass').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('sass').oneOf('normal-modules').use('css-loader') */
@@ -663,11 +678,12 @@ const config = {
           /* config.module.rule('sass').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('sass').oneOf('normal').use('extract-css-loader') */
+              /* config.module.rule('sass').oneOf('normal').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('sass').oneOf('normal').use('css-loader') */
@@ -705,11 +721,12 @@ const config = {
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('less').oneOf('vue-modules').use('extract-css-loader') */
+              /* config.module.rule('less').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('less').oneOf('vue-modules').use('css-loader') */
@@ -742,11 +759,12 @@ const config = {
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('less').oneOf('vue').use('extract-css-loader') */
+              /* config.module.rule('less').oneOf('vue').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('less').oneOf('vue').use('css-loader') */
@@ -777,11 +795,12 @@ const config = {
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('less').oneOf('normal-modules').use('extract-css-loader') */
+              /* config.module.rule('less').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('less').oneOf('normal-modules').use('css-loader') */
@@ -813,11 +832,12 @@ const config = {
           /* config.module.rule('less').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('less').oneOf('normal').use('extract-css-loader') */
+              /* config.module.rule('less').oneOf('normal').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('less').oneOf('normal').use('css-loader') */
@@ -854,11 +874,12 @@ const config = {
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('stylus').oneOf('vue-modules').use('extract-css-loader') */
+              /* config.module.rule('stylus').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('stylus').oneOf('vue-modules').use('css-loader') */
@@ -892,11 +913,12 @@ const config = {
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('stylus').oneOf('vue').use('extract-css-loader') */
+              /* config.module.rule('stylus').oneOf('vue').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('stylus').oneOf('vue').use('css-loader') */
@@ -928,11 +950,12 @@ const config = {
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('stylus').oneOf('normal-modules').use('extract-css-loader') */
+              /* config.module.rule('stylus').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('stylus').oneOf('normal-modules').use('css-loader') */
@@ -965,11 +988,12 @@ const config = {
           /* config.module.rule('stylus').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('stylus').oneOf('normal').use('extract-css-loader') */
+              /* config.module.rule('stylus').oneOf('normal').use('vue-style-loader') */
               {
-                loader: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               /* config.module.rule('stylus').oneOf('normal').use('css-loader') */
@@ -1026,12 +1050,8 @@ const config = {
             loader: 'cache-loader',
             options: {
               cacheDirectory: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\.cache\\babel-loader',
-              cacheIdentifier: '6e3658c6'
+              cacheIdentifier: '9b386344'
             }
-          },
-          /* config.module.rule('js').use('thread-loader') */
-          {
-            loader: 'thread-loader'
           },
           /* config.module.rule('js').use('babel-loader') */
           {
@@ -1058,7 +1078,7 @@ const config = {
                 '.vue'
               ],
               cache: true,
-              cacheIdentifier: '685b281b',
+              cacheIdentifier: 'aea72724',
               emitWarning: true,
               emitError: false,
               eslintPath: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\node_modules\\eslint\\lib\\api.js',
@@ -1092,80 +1112,13 @@ const config = {
       }
     ]
   },
-  optimization: {
-    minimizer: [{
-      options: {
-        test: /\.m?js(\?.*)?$/i,
-        chunkFilter: () => true,
-        warningsFilter: () => true,
-        extractComments: false,
-        sourceMap: true,
-        cache: true,
-        cacheKeys: defaultCacheKeys => defaultCacheKeys,
-        parallel: true,
-        include: undefined,
-        exclude: undefined,
-        minify: undefined,
-        terserOptions: {
-          output: {
-            comments: /^\**!|@preserve|@license|@cc_on/i
-          },
-          compress: {
-            arrows: false,
-            collapse_vars: false,
-            comparisons: false,
-            computed_props: false,
-            hoist_funs: false,
-            hoist_props: false,
-            hoist_vars: false,
-            inline: false,
-            loops: false,
-            negate_iife: false,
-            properties: false,
-            reduce_funcs: false,
-            reduce_vars: false,
-            switches: false,
-            toplevel: false,
-            typeofs: false,
-            booleans: true,
-            if_return: true,
-            sequences: true,
-            unused: true,
-            conditionals: true,
-            dead_code: true,
-            evaluate: true
-          },
-          mangle: {
-            safari10: true
-          }
-        }
-      }
-    }],
-    splitChunks: {
-      cacheGroups: {
-        vendors: {
-          name: 'chunk-vendors',
-          test: /[\\\/]node_modules[\\\/]/,
-          priority: -10,
-          chunks: 'initial'
-        },
-        common: {
-          name: 'chunk-common',
-          minChunks: 2,
-          priority: -20,
-          chunks: 'initial',
-          reuseExistingChunk: true
-        }
-      }
-    }
-  },
   plugins: [
     /* config.plugin('vue-loader') */
     new VueLoaderPlugin(),
     /* config.plugin('define') */
     new DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"',
+        NODE_ENV: '"development"',
         VUE_APP_CLI_UI_URL: '""',
         BASE_URL: '"/"'
       }
@@ -1216,47 +1169,14 @@ const config = {
         }
       ]
     }),
-    /* config.plugin('extract-css') */
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css'
-    }),
-    /* config.plugin('optimize-css') */
-    new OptimizeCssnanoPlugin({
-      sourceMap: false,
-      cssnanoOptions: {
-        preset: [
-          'default',
-          {
-            mergeLonghand: false,
-            cssDeclarationSorter: false
-          }
-        ]
-      }
-    }),
-    /* config.plugin('hash-module-ids') */
-    new HashedModuleIdsPlugin({
-      hashDigest: 'hex'
-    }),
-    /* config.plugin('named-chunks') */
-    new NamedChunksPlugin(
-      chunk => {
-        if (chunk.name) {
-          return chunk.name
-        }
-
-        const hash = require('hash-sum')
-        const joinedHash = hash(
-          Array.from(chunk.modulesIterable, m => m.id).join('_')
-        )
-        return `chunk-` + joinedHash
-      }
-    ),
+    /* config.plugin('hmr') */
+    new HotModuleReplacementPlugin(),
+    /* config.plugin('progress') */
+    new ProgressPlugin(),
     /* config.plugin('html') */
     new HtmlWebpackPlugin({
       templateParameters: (compilation, assets, pluginOptions) => {
         // enhance html-webpack-plugin's built in template params
-        console.log('assets:_____', assets);
         let stats
         return Object.assign({
           // make stats lazy as it is expensive
@@ -1270,13 +1190,6 @@ const config = {
             options: pluginOptions
           }
         }, resolveClientEnv(options, true /* raw */ ))
-      },
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-        collapseBooleanAttributes: true,
-        removeScriptTypeAttributes: true
       },
       template: 'G:\\my-projects\\frame\\vue-cli3_2\\test-vue-cli3-2\\public\\index.html'
     }),
