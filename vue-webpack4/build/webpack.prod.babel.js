@@ -4,6 +4,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import ReportAnalyzer from 'webpack-bundle-analyzer';
+import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 
 import webpackBaseConfig from './webpack.base.babel';
 import prodConfig from '../config/prod.env';
@@ -13,7 +15,7 @@ import {
 } from './utils';
 
 export default env => {
-  return merge(webpackBaseConfig(env), {
+  const config = merge(webpackBaseConfig(env), {
     mode: 'production',
     devtool: 'source-map',
     output: {
@@ -106,6 +108,7 @@ export default env => {
       }
     },
     plugins: [
+      new ProgressBarPlugin(),
       new webpack.DefinePlugin({
         'process.env': prodConfig
       }),
@@ -127,4 +130,10 @@ export default env => {
       })
     ]
   })
+
+  if (process.env.npm_config_report) {
+    config.plugins.push(new ReportAnalyzer.BundleAnalyzerPlugin());
+  }
+  
+  return config;
 }

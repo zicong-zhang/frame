@@ -1,7 +1,6 @@
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import PreloadPlugin from 'preload-webpack-plugin';
@@ -68,7 +67,6 @@ export default env => {
       noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/
     },
     plugins: [
-      new ProgressBarPlugin(),
       new VueLoaderPlugin(),
       new webpack.DllReferencePlugin({
         manifest: require(`./.manifest/dll-${env}-dll-manifest.json`)
