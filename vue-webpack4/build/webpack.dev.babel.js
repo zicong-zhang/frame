@@ -22,6 +22,7 @@ export default env => {
     stats: 'errors-only',
     quiet: true,
     compress: false,
+    historyApiFallback: true
   }
 
   return merge(webpackBaseConfig(env), {
