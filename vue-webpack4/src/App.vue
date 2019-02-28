@@ -1,53 +1,58 @@
 <template>
-
-  <div id="app" v-cloak>
-    <h1>{{ msg }}</h1>
-    <router-view/>
+  <div
+    id="app"
+    v-cloak
+  >
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data() {
-    return {
-      msg: 'Test'
-    }
-  },
-  created() {
-    console.log([1, 2, 3333].includes(2));
-    this.cc();
+  import { mapGetters } from "vuex";
 
-    const a = { name: 'test' };
-    const b = {
-      age: 18,
-      ...a
-    }
-    console.log(b);
-  },
-  methods: {
-    async cc() {
-      const p = await this.aa();
-      console.log('p:_____', p);
+  export default {
+    name: "app",
+    data() {
+      return {
+        msg: "Test"
+      };
     },
-    aa() {
-      return new Promise(res => {
-        console.log('Promise');
-        setTimeout(() => {
-          res(this.msg.padStart(15, '77777777777777777777777777'));
-        }, 2000);
+    computed: {
+      ...mapGetters({
+        routeTransitionName: "root/name"
       })
+    },
+    created() {
+      console.log([1, 2, 3333].includes(2));
+      this.asyncFn();
+
+      const a = { name: "test" };
+      const b = {
+        age: 18,
+        ...a
+      };
+      console.log(b);
+    },
+    methods: {
+      async asyncFn() {
+        const p = await this.promiseFn();
+      },
+      promiseFn() {
+        return new Promise(res => {
+          setTimeout(() => {
+            res(this.msg.padStart(15, "777777777777777"));
+          }, 2000);
+        });
+      }
     }
-  }
-}
+  };
 </script>
 
 <style lang="scss">
-#app {
-  overflow: hidden;
-}
-h1 {
-  color: #39f;
-  text-align: center;
-}
+  h1 {
+    color: #39f;
+    text-align: center;
+  }
 </style>

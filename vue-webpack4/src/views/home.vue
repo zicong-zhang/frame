@@ -4,37 +4,48 @@
     <h2 class="bb">{{ h2 }}</h2>
     <i class="i i-ios-pricetags"></i>
     <h3 class="aa">My position is fixed</h3>
-    <p @click="toList">{{ p }}</p>
-    <div class="bg-img" v-button></div>
-    <div class="sub-img"></div>
+    <button
+      v-button
+      @click="toList"
+    >{{ p }}</button>
+    <div
+      v-button
+      class="sub-img"
+    ></div>
     <img src="../assets/img/home/6.jpg" />
     <img src="~@img/2.jpg" />
-    <b-footer/>
+    <img src="../assets/img/home/6.jpg" />
+    <img src="~@img/2.jpg" />
+    <img src="../assets/img/home/6.jpg" />
+    <img src="~@img/2.jpg" />
+    <b-footer />
   </div>
 </template>
 
 <script>
+  import { CHANGE_ROUTER_TRANSITION } from "@vuex/mutation-types";
+  import { mapMutations } from "vuex";
+
   export default {
     name: "home",
     data() {
       return {
-        h2: "THIS IS HOME PAGE",
+        h2: "HOME PAGE",
         p: "Click me to the ListRouter!!!",
         opt: {
-          name: 'name',
-          age: 'age'
+          name: "name",
+          age: "age"
         }
       };
     },
-    created() {
-      const { name, age } = this.opt;
-      console.log(66666, name, Promise);
-      
-console.log(process.env);
-    },
+    created() {},
     methods: {
+      ...mapMutations({
+        CHANGE_ROUTER_TRANSITION: `root/${CHANGE_ROUTER_TRANSITION}`
+      }),
       toList() {
-        this.$router.push('list');
+        this.CHANGE_ROUTER_TRANSITION("route-in");
+        this.$router.push("list");
       }
     }
   };
@@ -65,10 +76,12 @@ console.log(process.env);
       z-index: 12;
       color: #fff;
     }
-    p {
-      /* color: #cc2828; */
-      font-size: 14px;
-      padding: 0 16px;
+    button {
+      height: 44px;
+      border-radius: 8px;
+      color: #fff;
+      padding: 0 10px;
+      margin: 24px 0;
     }
   }
   .bb {
@@ -76,7 +89,8 @@ console.log(process.env);
     font-size: 40px;
     font-family: "arial";
   }
-  .bg-img, .sub-img {
+  .bg-img,
+  .sub-img {
     width: 100%;
     height: 300px;
   }

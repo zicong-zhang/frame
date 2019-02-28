@@ -1,9 +1,9 @@
-import rootModule from './root';
-import orderModule from './order';
-import listModule from './list';
+import root from './root';
+import order from './order';
+import list from './list';
 
 export default {
-  rootModule,
-  orderModule,
-  listModule
+  root,
+  order,
+  list
 }

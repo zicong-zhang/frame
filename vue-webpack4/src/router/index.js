@@ -20,5 +20,13 @@ const routes = [{
 
 export default new VueRouter({
   mode: 'history',
-  routes
+  routes,
+  scrollBehavior(to, from, position) {
+    if (position) return position;
+
+    return {
+      x: 0,
+      y: 0
+    }
+  }
 })

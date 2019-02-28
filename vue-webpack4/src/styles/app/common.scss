@@ -3,24 +3,12 @@
 	display: none !important;
 }
 
-// 竖直1px
-.vertical-bar {
-	display: block;
-	width: 1px;
-	height: 25px;
-	background: #a1a1a1;
-	-webkit-transform: scale(.5, 1);
-	transform: scale(.5, 1);
-	-webkit-transform-origin: center bottom;
-	transform-origin: center bottom;
-}
-
-// 水平1px
-.horizon-bar {
-	display: block;
-	width: 100%;
-	height: 1px;
-	background: #eaeaea;
-	transform: scale(1, .5);
-	transform-origin: center bottom;
+/* body fixed */
+.body-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
 }

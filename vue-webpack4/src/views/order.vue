@@ -1,7 +1,7 @@
 <template>
   <div class="order">
-    <h3>Test Order Page</h3>
-    <h4 @click="toHome">to List</h4>
+    <h2>Order Page</h2>
+    <button @click="toHome">To List</button>
   </div>
 </template>
 
@@ -18,8 +18,19 @@ export default {
 
 <style lang="scss" scoped>
 .order {
-  h3 {
-    color: $red;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    h2 {
+      color: $red;
+      font-size: 50px;
+      padding: 24px 0;
+    }
+    button {
+      height: 44px;
+      border-radius: 8px;
+      color: #fff;
+      padding: 0 10px;
+    }
   }
-}
 </style>
