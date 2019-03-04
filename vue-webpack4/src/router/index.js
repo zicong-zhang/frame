@@ -18,15 +18,30 @@ const routes = [{
   noFoundRouter
 )
 
+const beforeEach = (to, from, next) => {
+  console.log('to, from:_____', to, from);
+  
+  // 鉴权
+  if (to.meta.auth) {
+    // ...
+  }
+
+  next();
+}
+
+const scrollBehavior = (to, from, position) => {
+  if (position) return position;
+
+  return {
+    x: 0,
+    y: 0
+  }
+}
+
 export default new VueRouter({
   mode: 'history',
+  // base: '/dist/', // vscode 开启 Live Server 时启用
   routes,
-  scrollBehavior(to, from, position) {
-    if (position) return position;
-
-    return {
-      x: 0,
-      y: 0
-    }
-  }
+  beforeEach,
+  scrollBehavior
 })

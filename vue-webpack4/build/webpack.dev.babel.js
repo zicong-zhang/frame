@@ -29,6 +29,7 @@ export default env => {
     mode: 'development',
     devServer,
     output: {
+      publicPath: '/',
       filename: '[name].js',
       chunkFilename: '[name].chunk.js'
     },

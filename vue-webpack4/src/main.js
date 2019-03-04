@@ -23,9 +23,11 @@ Vue.config.errorHandler = (err, vm, info) => {
 
 
 
-new Vue({
+const vm = new Vue({
   el: '#app',
   router,
   store,
   render: h => h(App)
 })
+
+window.vm = vm;

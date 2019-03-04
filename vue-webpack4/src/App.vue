@@ -24,6 +24,11 @@
         routeTransitionName: "root/name"
       })
     },
+    watch: {
+      $route(to, from) {
+        console.log('to, from:_____', to, from);
+      }
+    },
     created() {
       console.log([1, 2, 3333].includes(2));
       this.asyncFn();
