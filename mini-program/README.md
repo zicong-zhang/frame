@@ -47,7 +47,6 @@ configs -- 各个环境接口的配置
 ```
 	npm run mock -- 跑假数据接口
     npm run mock:lint -- 同上，且加了代码检查eslint
-    (特别说明：由于webpack的--watch,和node服务，这两个双进程无法同时执行，优先是执行--watch，所以，每次修改假数据，都要重新run一下)
     npm run dev -- 内测,实时watch
     npm run dev:lint -- 同上，且加了代码检查eslint
     npm run dev-b -- 公测,实时watch

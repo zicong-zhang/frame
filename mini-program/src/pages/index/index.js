@@ -2,7 +2,7 @@ const app = getApp();
 
 Page({
   data: {
-    msg: '架子'
+    msg: '架子22'
   },
   onLoad() {
     this.getData()

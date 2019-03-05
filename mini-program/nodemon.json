@@ -1,0 +1,6 @@
+{
+  "watch": [
+    "mock"
+  ],
+  "exec": "cross-env API_HOST=mock node ./mock/index.js "
+}
